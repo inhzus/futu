@@ -19,6 +19,7 @@
     {{ if eq $currentOutputFormat.Name "AMP" }}
     {{ else }}
       {{- partial "disqus.html" . -}}
+      {{- partial "giscus.html" . -}}
     {{ end }}
   </article>
 {{- end }}
