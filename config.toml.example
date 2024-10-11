@@ -36,6 +36,10 @@ paginate = 10
   googleVerification = ""
   enableEmojiZoomJS = true
 
+[params.follow]
+  feedId = "123456"
+  userId = "78910
+
 [params.git]
   repo = "https://github.com/masakichi/futu"
   branch = "main"
