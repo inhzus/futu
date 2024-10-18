@@ -12,8 +12,12 @@
       <ul class="pages-list">
         {{ range first (site.Params.homePaginate | default 5) .section.RegularPages.ByPublishDate.Reverse }}
           <li>
+            {{- if .Params.vice }}
+            <div class="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ .RelPermalink }}">>&nbsp;{{ .Title }}</a></div>
+            {{- else -}}
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <small><time datetime="{{ partial "rfc3339.html" .PublishDate }}">{{ .PublishDate.Format (site.Params.dateFormatToUse | default "2006-01-02") }}</time></small>
+            {{ end -}}
           </li>
         {{ end }}
         <li>
