@@ -15,8 +15,7 @@
       {{ end }}
     {{ end }}
     {{ .Content }}
-    {{ $currentOutputFormat := (partial "current_output_format.html" .) }}
-    {{ if eq $currentOutputFormat.Name "AMP" }}
+    {{ if in .RelPermalink "/amp/" }}
     {{ else }}
       {{- partial "disqus.html" . -}}
       {{- partial "giscus.html" . -}}
